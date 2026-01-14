@@ -34,7 +34,6 @@ const {data:exisitingUser,error:error1} = await supabase
   .from('players')
   .select('*')
   .eq('id', tgId)
-  .single();
 
 if(error1) {
     console.log('api请求失败',error1.message)
