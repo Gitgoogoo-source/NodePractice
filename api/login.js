@@ -34,17 +34,18 @@ const {data:exisitingUser,error:error1} = await supabase
   .from('players')
   .select('*')
   .eq('id', tgId)
+  
 
 if(error1) {
     console.log('api请求失败',error1.message)
     return res.status(500).json({success:false, error:error1.message})
 }
 //如果查到了，说明时老玩家，如果没查到，就是新玩家
-if(exisitingUser){
+if(existingUsers && existingUsers.length > 0){
     return res.status(200).json({
     success :true,
     isNew : false,
-    playerData : exisitingUser,
+    playerData : exisitingUser[0],
     message : "欢迎回来，老玩家！"
 })
 }
