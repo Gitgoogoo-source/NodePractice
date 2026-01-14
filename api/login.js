@@ -28,13 +28,13 @@ export default async function handler(req ,res){
 
   const {tgId , username} = req.body;
   //查找这个id
-const {data:exisitingUser,error} = await supabase
+const {data:exisitingUser,error:error1} = await supabase
   .from('players')
   .select('coins')
   .eq('id', tgId)
   .single();
 
-
+if(error1) return res.status(500).json({error:error1.message})
 //如果查到了，说明时老玩家，如果没查到，就是新玩家
 if(exisitingUser){
     return res.status(200).json({
@@ -43,7 +43,6 @@ if(exisitingUser){
     message : "欢迎回来，老玩家！"})}
 
 //3. 如果没查到，或者报错说找不到，说明是新玩家 -> 执行插入 (Insert)
-
 //初始化。送100金币
 
 const {data : newUser,error:insertError} = await supabase
