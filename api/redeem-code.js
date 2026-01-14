@@ -40,7 +40,8 @@ export default async function handler(req ,res){
 const {data:usedData , error:userError} = await supabase
 .from('used_codes')
 .select('*')
-.eq('id',userId)
+.eq('user_id',userId)
+.eq('code',codeInput)
 .maybeSingle()
 
 if(usedData)    return res.status(400).json({success:false , message:'你已经领过了'})
