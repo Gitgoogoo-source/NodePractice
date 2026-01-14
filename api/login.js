@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { appendFile } from "node:fs";
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -26,7 +27,8 @@ export default async function handler(req ,res){
     return res.status(200).end();
   }
 
-  const {tgId , username} = req.body;
+
+const {tgId , username} = req.body;
   //查找这个id
 const {data:exisitingUser,error:error1} = await supabase
   .from('players')
@@ -34,13 +36,18 @@ const {data:exisitingUser,error:error1} = await supabase
   .eq('id', tgId)
   .single();
 
-if(error1) return res.status(500).json({error:error1.message})
+if(error1) {
+    console.log('api请求失败')
+    return res.status(500).json({error:error1.message})
+}
 //如果查到了，说明时老玩家，如果没查到，就是新玩家
 if(exisitingUser){
     return res.status(200).json({
     isNew : false,
     playerData : exisitingUser,
-    message : "欢迎回来，老玩家！"})}
+    message : "欢迎回来，老玩家！"
+})
+}
 
 //3. 如果没查到，或者报错说找不到，说明是新玩家 -> 执行插入 (Insert)
 //初始化。送100金币
@@ -52,7 +59,9 @@ const {data : newUser,error:insertError} = await supabase
     .select()
     .single();
 
-if(insertError) return res.status(500).json({error:insertError.message});
+if(insertError) {
+     console.log('api请求失败')
+    return res.status(500).json({error:insertError.message});}
 
 return res.status(200).json({
     isNew : true,
