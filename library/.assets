@@ -1,0 +1,15 @@
+{
+    "version": "1.0.1",
+    "data": {
+        "paths": [
+            "prefab",
+            "scene",
+            "script",
+            "script/GameCtrl.ts",
+            "script/Leaderboard.ts",
+            "script/NetworkManager.ts",
+            "prefab/RankItem.prefab",
+            "scene/c1.scene"
+        ]
+    }
+}

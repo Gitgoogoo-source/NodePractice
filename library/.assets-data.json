@@ -1,0 +1,67 @@
+{
+  "f76ce507-154a-4f8c-942c-daf2f5ee0ff0": {
+    "url": "db://assets/scene",
+    "value": {},
+    "versionCode": 1
+  },
+  "4947fd71-9a4a-4315-9b59-796c4c51c770": {
+    "url": "db://assets/script",
+    "value": {},
+    "versionCode": 1
+  },
+  "e84b1d5d-95ad-41fc-9777-cc31bb5e21da": {
+    "url": "db://assets/scene/出.scene",
+    "value": {},
+    "versionCode": 2
+  },
+  "90956332-636c-4645-ba33-b27726ac84d1": {
+    "url": "db://assets/scene/c1.scene",
+    "value": {
+      "depends": [
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "afc47931-f066-46b0-90be-9fe61f213428@f9941",
+        "ffb88a8f-af62-48f4-8f1d-3cb606443a43@f9941",
+        "b730527c-3233-41c2-aaf7-7cdab58f9749@f9941",
+        "04e53185-ef98-4a82-a49f-523d1392173c"
+      ],
+      "dependScripts": [
+        "f6e23815-e4e6-42b1-aaf9-795f18d31c3d",
+        "09d911bc-34de-441a-aa62-103c1ea0e70c",
+        "2664f3a5-7f9a-46bd-8b75-59626039bbe8"
+      ]
+    },
+    "versionCode": 2
+  },
+  "f6e23815-e4e6-42b1-aaf9-795f18d31c3d": {
+    "url": "db://assets/script/NetworkManager.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "09d911bc-34de-441a-aa62-103c1ea0e70c": {
+    "url": "db://assets/script/GameCtrl.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "ce23479d-7200-46d4-a2b7-c1126829cd84": {
+    "url": "db://assets/prefab",
+    "value": {},
+    "versionCode": 1
+  },
+  "04e53185-ef98-4a82-a49f-523d1392173c": {
+    "url": "db://assets/prefab/RankItem.prefab",
+    "value": {
+      "depends": [
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941"
+      ],
+      "dependScripts": []
+    },
+    "versionCode": 2
+  },
+  "2664f3a5-7f9a-46bd-8b75-59626039bbe8": {
+    "url": "db://assets/script/Leaderboard.ts",
+    "value": {},
+    "versionCode": 1
+  }
+}
