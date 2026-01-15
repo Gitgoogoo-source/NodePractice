@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+
+   <!-- 2. Eruda 调试工具 (我帮你加上的) -->
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+      // 初始化调试面板
+      eruda.init();
+      // 这里的代码是为了防止图标被游戏画面挡住，强制置顶
+      setTimeout(() => {
+          var el = document.getElementById('eruda');
+          if(el) {
+              el.style.zIndex = 999999;
+              el.style.position = 'absolute';
+          }
+      }, 2000); 
+  </script>
   <meta charset="utf-8">
 
   <title>Cocos Creator | PracticeNode</title>
