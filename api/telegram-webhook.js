@@ -4,7 +4,7 @@ const { createClient } = require('@supabase/supabase-js');
 // 初始化 Supabase
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY
+  process.env.SUPABASE_KEY
 );
 
 export default async function handler(req, res) {
