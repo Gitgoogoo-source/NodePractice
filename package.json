@@ -1,0 +1,11 @@
+{
+  "name": "payTest",
+  "uuid": "84bd40c4-ab25-41ed-b6b4-43892105fe58",
+  "creator": {
+    "version": "3.8.8"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.91.0",
+    "crypto-js": "^4.2.0"
+  }
+}

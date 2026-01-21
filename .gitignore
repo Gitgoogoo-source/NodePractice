@@ -1,0 +1,27 @@
+# 1. 先忽略所有文件（这一步很狠，所有东西都会变灰）
+*
+
+# 2. 但是！不能忽略文件夹（否则Git进不去文件夹，就找不到里面的文件了）
+!*/
+
+node_modules/
+
+# 3.规则书本身也别忘记上传哈
+!.gitignore
+
+
+!api/**
+
+!public/**
+
+
+!package-lock.json
+
+!package.json
+
+!tsconfig.json
+
+!vercel.json
+
+
+
