@@ -100,14 +100,14 @@ export default async function handler(req, res) {
   }
 
   // --- 辅助函数：回复 Pre-checkout ---
-  async function answerPreCheckoutQuery(queryId, ok, errorMessage = "") {
+  async function answerPreCheckoutQuery(queryId, okString, errorMessage = "") {
     const url = `https://api.telegram.org/bot${botToken}/answerPreCheckoutQuery`;
     await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         pre_checkout_query_id: queryId,
-        ok: ok,
+        ok: okString,
         error_message: errorMessage // 如果 ok=false，用户会看到这个错误提示
       })
     });
